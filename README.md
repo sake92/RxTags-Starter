@@ -1,6 +1,6 @@
 # RxTags-Starter
 
-RxTags starter template
+[RxTags](https://github.com/sake92/RxTags) starter template
 
 ## Usage
 
