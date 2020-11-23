@@ -5,7 +5,7 @@ lazy val client = (project in file("client"))
     scalaJSUseMainModuleInitializer := true,
     scalafmtOnCompile := true,
     libraryDependencies ++= Seq(
-      "ba.sake" %%% "rxtags" % "0.0.1"
+      "ba.sake" %%% "rxtags" % "0.0.3"
     )
   )
   .enablePlugins(ScalaJSPlugin)
