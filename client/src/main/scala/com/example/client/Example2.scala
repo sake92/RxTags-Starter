@@ -18,22 +18,19 @@ object Example2 {
     )
   )
 
-  def content(): Frag =
-    div(
-      h1("My cart items"),
-      hr,
-      cartItems$.map { items =>
-        ul(
-          items.map { item =>
-            li(
-              b(item.count),
-              s" ${item.name} ",
-              button(onclick := delete(item))("Delete")
-            )
-          }
+  def content(): Frag = div(
+    h1("My cart items"),
+    hr,
+    ul(
+      cartItems$.map2 { item =>
+        li(
+          b(item.count),
+          s" ${item.name} ",
+          button(onclick := delete(item))("Delete")
         )
-      }.asFrag
+      }
     )
+  )
 
   def delete(item: CartItem): (dom.Event => Unit) =
     e => {

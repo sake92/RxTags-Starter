@@ -1,7 +1,6 @@
 package com.example.client
 
 import org.scalajs.dom
-import org.scalajs.dom.html.Input
 import scalatags.JsDom.all._
 import ba.sake.rxtags._
 
@@ -15,14 +14,13 @@ object Example1 {
       "Please enter your username: ",
       input(onkeyup := updateUsername()),
       br,
-      username$.map { u =>
-        "You entered: " + u
-      }.asFrag
+      "You entered: ",
+      username$
     )
 
   def updateUsername(): (dom.KeyboardEvent => Unit) =
     e => {
-      val inputField = e.target.asInstanceOf[Input]
+      val inputField = e.target.asInstanceOf[dom.html.Input]
       username$.set(inputField.value)
     }
 }

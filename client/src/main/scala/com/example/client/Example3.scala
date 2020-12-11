@@ -19,10 +19,9 @@ object Example3 {
     )
 
   def randomClass(): (dom.Event => Unit) =
-    e => {
+    e =>
       class$.set {
         val rand = 1 + ((Math.random() * 10).toInt / 3) // 1,2 or 3
         s"style$rand"
       }
-    }
 }
